@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>📝 Evaluación N°1</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <p>
+                <a href="index.html">Hola</a>
+                <a href="page-1.html">Caleidoscopio</a>
+                <a href="page-2.html">Condiciones</a>
+                <a href="page-3.html"class="activo">Poema Aleatorio</a>
+                <a href="page-4.html">Orbit Control</a>
+            </p>
+            <h1>Poema Aleatorio</h1>
+        </header>
+        <main></main>
+        <!--active este botón-->
+        <aside>
+            <button onclick="foto()">📥 DESCARGA</button>
+        </aside>
+        <!-- Lo que sigue depende de usted -->
+        <script>
+            function setup() {
+                createCanvas(windowWidth, windowHeight);
+                //repita un mismo background en el style.css y en todos los script
+                background("#004D40");
+            };
+    let words = ['Corazones', 'rojos', 'fuertes', 'Espaldas', 'debiles', 'de', 'mujer',
+  'mil', 'insultos', 'como', 'latigazos', 'dame', 'comer', 'cordura', 'comida', 'yo',
+  'sabre', 'traicionar', 'jamas', 'pagar', 'porque', 'soy', 'un',
+  'hombre', 'y', 'no', 'te', 'puedo', 'mirar', 'doy', 'la', 
+  'plata', 'estas', 'forzada', 'a', 'rendirme', 'honores', 'seguir', 'mi', 'humor',
+  'buscate', 'trabajo', 'estudia', 'algo', 'la', 'mitad', 'del', 'sueldo',
+  'doble', 'labor', 'si', 'quejas', 'ahi', 'puerta', 'esta', 'autorizada', 'opinion', 'dar',
+  'tu', 'amor', "sacare", 'ventaja', 'adulta', 'me', 'reire',
+  'madre', 'con', 'dormire', 'siesta', 'esposa', 'le', 'mentire', 'nosotros', 'inventamos',
+  'compramos', 'ganamos', 'batallas', 'marchamos', 'lloras', 'nada', 'todo', 'veces', 'emborrachamos','pensando', 'casa', 'queremos', 'lavando', 'ropa','mujeres'];
+
+// Set the amount of words to be drawn on the canvas,   as
+// well as the starting hue value. Declare the position variable,
+// which will be used to randomly start the word selection in the array.
+let wordCount = 15;
+let hue;
+let position;
+
+function setup() {
+  describe(
+    'A random series of words related to p5.js scattered onto the canvas.'
+  );
+
+  // Import the selected font style defined in the canvas's style.css file.
+  textFont('Space Mono');
+
+  createCanvas(windowWidth, windowHeight);
+
+  // Set the text alignment to center and set the color mode to HSB.
+  textAlign(CENTER);
+  colorMode(HSB);
+
+  // Define hue as a random value.
+  hue = ("#FF7043");
+
+  // Define the random starting point for selecting the words in the
+  // array.
+  position = floor(random(0, words.length - wordCount));
+
+  background('#004D40');
+
+            let title = document.querySelector('h1');
+            let titleY = title.offsetTop + title.offsetHeight;
+
+            let paddingBottom = 40;
+            let paddingTop = 40;
+
+  for (let i = 0; i < 20; i++) {
+    textSize(random(16, 48));
+    fill(255);
+      let yPos = random(titleY + paddingTop, height - paddingBottom);
+   text(random(words),random(width),yPos);
+    }
+}
+
+        function foto() {
+                saveCanvas("Poema Aleatorio.jpg");
+            }
+</script>
